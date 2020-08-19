@@ -62,13 +62,105 @@
 }
 
 .body {
-    background-color: darkgray;
-    padding: 20px;
-    height: 1000px;
+    padding: 0px 20px 0px 20px;
 }
 
 .primary{
-    background-color: wheat;
-    margin: none;
+    margin-bottom: 20px;
     font-size: 12px;
+    font-weight: 600;
+    color: gray;
+}
+
+.mail-title-box {
+    margin: 20px 0px;
+    display: flex;
+    text-align: center;
+    height: 70px;
+}
+
+.mail-sender-profile {
+    width: 15%;
+    height: 100%;   
+    text-align: left;
+}
+
+.sender-profile-icon {
+    width: 100%;
+    height: 100%;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.header-text-title {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.mail-sent-info {
+    font-weight: 700;
+    text-align: left;
+    display: flex;
+    height: 40%;
+}
+
+.sender-name {
+    width: 80%;
+}
+
+.sent-time {
+    width: 20%;
+    font-size: 12px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sent-time .date-time{
+    width: 100%;
+    text-align: right;
+}
+
+.content-box {
+    display: flex;
+    height: 60%;
+}
+
+.mail-content {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.mail-header-text {
+    white-space: nowrap; 
+    overflow:hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: left;
+    height: 50%;
+}
+
+.mail-content-text {
+    white-space: nowrap; 
+    overflow:hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    height: 50%;
+}
+
+.fav-icon {
+    width: 10%;
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    padding-left: 10px;
+}
+
+.fav-icon svg {
+    text-align: center;
 }
