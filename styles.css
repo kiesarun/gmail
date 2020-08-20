@@ -6,6 +6,7 @@
 
 .header {
     height: 100px;
+    width: 100%;
     padding: 20px;
 }
 
@@ -14,7 +15,7 @@
 }
 
 .header-bar nav {
-    box-shadow: 0px 10px 10px lightgray;
+    box-shadow: 0px 4px 10px lightgray;
     background-color: #fff !important;
 }
 
@@ -80,7 +81,7 @@
 }
 
 .mail-sender-profile {
-    width: 15%;
+    max-width: 15%;
     height: 100%;   
     text-align: left;
 }
@@ -159,8 +160,212 @@
     text-align: center;
     align-items: flex-end;
     padding-left: 10px;
+    justify-content: flex-end;
 }
 
 .fav-icon svg {
     text-align: center;
 }
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.compose {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+}
+
+.compose button {
+    border-radius: 50px;
+    border-color: #fff;
+    box-shadow: 2px 5px 10px grey !important;
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+.pencil-style {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+
+/* side bar */
+
+#wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background-color: #fff !important;
+  border: none !important;
+  box-shadow: 0px 1px 6px lightgray !important;
+
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  margin-bottom: 7px;
+  /* border: 1px solid lightgrey; */
+  box-shadow: 0px 1px 6px lightgray !important;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+.bg-light a{
+    background-color: #fff !important;
+    border: none;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+  
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    height: 100%;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    border-bottom: 1px solid #fff !important;
+}
+
+.modal-header .close {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.tool {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tool-icon {
+    height: 100%;
+    align-items: flex-end;
+}
+
+.modal-body {
+    padding: 0px !important;
+}
+
+.modal-body form {
+    width: 100%;
+}
+
+.modal-body .form-group {
+    margin: 0px;
+}
+
+.modal-body .form-control{
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.form-group input {
+    height: 45px;
+}
+
+.form-group textarea {
+    height: 100vh !important;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+  
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+
