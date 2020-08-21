@@ -12,10 +12,10 @@ function start() {
 }
 
 function mailTitleBox(mail, name) {
-    return '<div class="mail-title-box" id="' + mail.id + '">\
+    return '<div class="mail-title-box">\
                 <div class="mail-sender-profile">\
-                    <div class="sender-profile-icon">\
-                        <img class="profile-pic" onclick="selected(' + mail.id + ')" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">\
+                    <div class="sender-profile-icon" id="icon-' + mail.id +'">\
+                        <img class="profile-pic" id="pic-' + mail.id +'" onclick="selected(' + mail.id + ')" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">\
                     </div>\
                 </div>\
                 <div class="header-text-title">\
@@ -134,22 +134,24 @@ function allMailPage() {
 }
 
 function header() {
-    return '<div class="header-bar">\
-                <nav class="navbar navbar-light bg-light search-bar-style">\
-                    <form class="form-inline">\
-                        <div class="menu-list-icon" id="menu-toggle">\
-                            <svg width="90%" height="90%" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
-                                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>\
-                            </svg>\
-                        </div>\
-                        <div class="search-bar">\
-                            <input class="form-control" type="search" placeholder="Search in mail" aria-label="Search">\
-                        </div>\
-                        <div class="profile-icon">\
-                            <img class="profile-pic" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">\
-                        </div>\
-                    </form>\
-                </nav>\
+    return '<div class="main-header">\
+                <div class="header-bar">\
+                    <nav class="navbar navbar-light bg-light search-bar-style">\
+                        <form class="form-inline">\
+                            <div class="menu-list-icon" id="menu-toggle">\
+                                <svg width="90%" height="90%" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>\
+                                </svg>\
+                            </div>\
+                            <div class="search-bar">\
+                                <input class="form-control" type="search" placeholder="Search in mail" aria-label="Search">\
+                            </div>\
+                            <div class="profile-icon">\
+                                <img class="profile-pic" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">\
+                            </div>\
+                        </form>\
+                    </nav>\
+                </div>\
             </div>'
 }
 
@@ -161,6 +163,48 @@ function makeid(length) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
+}
+
+function showSelector(id) {
+    return '<div class="profile-pic selected-icon" id="selected-icon-' + id + '" onclick="deSelected(' + id +')">\
+                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check icon-width" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                    <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>\
+                </svg>\
+            </div>'
+}
+
+function showProfilePic(id) {
+    return '<img class="profile-pic" id="pic-' + id +'" onclick="selected(' + id + ')" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">'
+}
+
+function showTool(){
+    return '<div class="tool-bar">\
+                <div class="tool-box">\
+                    <div class="tool-box-left">\
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>\
+                        </svg>\
+                        <div class="selected-count"> 1 </div>\
+                    </div>\
+                    <div class="tool-box-right">\
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-download space-between" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                            <path fill-rule="evenodd" d="M.5 8a.5.5 0 0 1 .5.5V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8.5a.5.5 0 0 1 1 0V12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8.5A.5.5 0 0 1 .5 8z"/>\
+                            <path fill-rule="evenodd" d="M5 7.5a.5.5 0 0 1 .707 0L8 9.793 10.293 7.5a.5.5 0 1 1 .707.707l-2.646 2.647a.5.5 0 0 1-.708 0L5 8.207A.5.5 0 0 1 5 7.5z"/>\
+                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 1z"/>\
+                        </svg>\
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-trash space-between" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>\
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>\
+                        </svg>\
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-envelope space-between" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                            <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>\
+                        </svg>\
+                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-three-dots space-between" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                            <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>\
+                        </svg>\
+                    </div>\
+                </div>\
+            </div>'
 }
 
 function sendEmail(email, subject, text) {
@@ -212,6 +256,17 @@ function render(page, selector) {
     }
     $(".body").html(page)
     $(".inbox-mail").html(selector)
+}
+
+function selected(id) {
+    $('#pic-' + id).hide()
+    $('#icon-' + id).html(showSelector(id))
+    $(".header").html(showTool())
+}
+
+function deSelected(id) {
+    $('#selected-icon-'+ id).hide()
+    $('#icon-' + id).html(showProfilePic(id))
 }
 
 start()
