@@ -180,6 +180,7 @@
 .compose button {
     border-radius: 50px;
     border-color: #fff;
+    background-color: #fff;
     box-shadow: 2px 5px 10px grey !important;
     font-weight: 600;
     padding: 10px 15px;
