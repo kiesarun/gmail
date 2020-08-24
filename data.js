@@ -7,8 +7,14 @@ var data = {
             name: "dream",
             email: "dream@example.com"
         },
-        header: "Let's go home!",
-        text: "yark kub barn laew kie, hiwwwwwwwwwwwwwwwwwwwwwwwwwwww makkkkk",
+        header: "Let's go home! kannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+        text: "yark kub barn laew kie, hiwwwwwwwwwwwwwwwwwwwwwwwwwwww makkkkkkkkkkkkkkkkkkkkkkkkk\
+        dfsjgdfjgdlkfkgkjdfhljdflghmklfghmkldfmghklfmdgkhmdfklhmkldgmfhklfmghklfgmkhlmfkgmdfsklmgbklsdfmgkbdfsmg\
+        klgdfgjdnfjgmdskfmgkjdsngdjsfmglksdmfgbsdfmgkdslfmgkldfmgkmadfklmgksldfmgkadfmgvkamsdkgmadfklmgkdlfmgkldmfklsad\
+        fksldgmkdsfmgkladsmfgksdfasopdjgsdfjgladkfgiokdafmgkmdfigmsdklmgkadfmgkdfamgjhjrwtikhersdmgfioesrkgopekopfkewopdoewk\
+        fjesnfjndrjfnjdsnfjndsfjrnegnerjgfnrjdnfgjsdnfgjsndrgnajdksnvjdafngjsdfngkjnsdfjgndsjfngjdsfnbgjdsfngjndafgjndsfjgndsjf\
+        smefjkserhgjdrfgmrkdmgjkrengtiudrtjgnjsermfopewfogenrihgobjvdfrgmekrnjgioerjgnekrdmfoqpwejfiwerhjwierjmfioenrgioejrgiqermifm\
+        skgorfkh,f,dge,fg,rth,orpf[d.,s;l,ghet,hldf,vd,rgoer,thg,wrfr,grpf,hprt,hoktrgowerktoqk5yo6p95tjioewjrfiaskgoearkgjiotqerj",
         createdAt: new Date(2020, 7, 20),
         type:"inbox",
         isDeleted: false
