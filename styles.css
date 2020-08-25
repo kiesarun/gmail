@@ -7,7 +7,54 @@
 .header {
     height: 100px;
     width: 100%;
+}
+
+.main-header {
     padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.tool-bar {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
+}
+
+.color-grey {
+    color: grey !important;
+}
+
+.tool-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px lightgray;
+}
+
+.tool-box-left {
+    align-self: center;
+    margin-left: 10px;
+    color: #1a73e8;
+    display: flex;
+}
+
+.selected-count {
+    margin-left: 40px;
+    font-weight: 600;
+}
+
+.tool-box-right {
+    align-self: center;
+    margin-right: 10px;
+    color: #1a73e8;
+    display: flex;
+}
+
+.space-between {
+    margin: 0px 10px;
 }
 
 .header-bar {
@@ -62,11 +109,22 @@
     border-radius: 50%;
 }
 
+.selected-icon {
+    min-width: 56px;
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+.icon-width {
+    min-width: 56px;
+    padding-top: 5px;
+}
+
 .body {
     padding: 0px 20px 0px 20px;
 }
 
-.primary{
+.page-name{
     margin-bottom: 20px;
     font-size: 12px;
     font-weight: 600;
@@ -131,7 +189,7 @@
 
 .mail-content {
     display: flex;
-    width: 90%;
+    width: 85%;
     height: 100%;
     flex-direction: column;
 }
@@ -155,15 +213,20 @@
 }
 
 .fav-icon {
-    width: 10%;
+    width: 15%;
     display: flex;
     text-align: center;
     align-items: flex-end;
-    padding-left: 10px;
     justify-content: flex-end;
 }
 
-.fav-icon svg {
+.fav-icon .icon {
+    color: grey;
+    text-align: center;
+}
+
+.fav-icon .icon :hover{
+    color: #1a73e8;
     text-align: center;
 }
 
@@ -180,6 +243,7 @@
 .compose button {
     border-radius: 50px;
     border-color: #fff;
+    background-color: #fff;
     box-shadow: 2px 5px 10px grey !important;
     font-weight: 600;
     padding: 10px 15px;
@@ -190,6 +254,56 @@
     margin-right: 5px;
 }
 
+/* .mail-content-page {
+
+} */
+
+/* .mail-content-header {
+
+} */
+
+.mail-header-wrapper {
+    display: flex;
+}
+
+.mail-content-subject {
+    font-size: 24px;
+    width: 90%;
+    word-break: break-all;
+}
+
+.mail-header-wrapper .fav-icon {
+    justify-content: flex-end;
+    width: 10%;
+}
+
+.mail-content-sender .mail-title-box {
+    margin-bottom: 0px;
+}
+
+.mail-content-sender .mail-title-box .header-text-title .mail-sent-info .sender-name {
+    width: fit-content;
+    font-weight: 500;
+}
+
+.mail-content-sender .mail-title-box .header-text-title .mail-sent-info .sent-time {
+    align-items: center;
+    color: gray;
+    font-weight: 400;
+    text-align: center;
+    width: fit-content;
+    margin-left: 10px;
+}
+
+.receiver-box {
+    width: fit-content;
+    font-size: 12px;
+    color: gray;
+}
+
+.mail-content-compose {
+    word-break: break-all;
+}
 
 /* side bar */
 
