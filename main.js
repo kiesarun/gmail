@@ -13,14 +13,13 @@ function start() {
 }
 
 function mailTitleBox(mail, name) {
-    console.log(mail)
     return '<div class="mail-title-box">\
                 <div class="mail-sender-profile">\
                     <div class="sender-profile-icon" id="icon-' + mail.id +'">\
-                        <img class="profile-pic" id="pic-' + mail.id +'" onclick="selected(' + mail.id + ')" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">\
+                        <img class="profile-pic" id="pic-' + mail.id +'" onclick="selected(\'' + mail.id + '\')" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">\
                     </div>\
                 </div>\
-                <div class="header-text-title" onclick="showEmailContent(' + mail.id + ')">\
+                <div class="header-text-title" onclick="showEmailContent(\'' + mail.id + '\')">\
                     <div class="mail-sent-info">\
                         <div class="sender-name">' + name + '</div>\
                         <div class="sent-time">\
@@ -94,10 +93,12 @@ function mailContent(mail) {
             </div>'
 }
 
-function showModal() {
+function showModal(id='') {
+    previousPage = currentPage
+    currentPage = 'modal'
     return '<div class="modal-content">\
                 <div class="modal-header">\
-                    <div class="close" onclick="closeModal()">\
+                    <div class="close" onclick="closeModal(\'' + id +'\')">\
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
                             <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>\
                             <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>\
@@ -107,7 +108,7 @@ function showModal() {
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-paperclip tool-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
                             <path fill-rule="evenodd" d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>\
                         </svg>\
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cursor tool-icon" id="send-btn" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cursor tool-icon" onclick="sendMail(\'' + id + '\')" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
                             <path fill-rule="evenodd" d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/>\
                         </svg>\
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots tool-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
@@ -137,10 +138,11 @@ function showEmailContent(id) {
     if (select.email.type !== 'draft') {
         render(mailContentPage(), mailContent(select.email))
     } else {
-        $("#myModal").html(showModal())
+        $(".header").html(header())
+        $("#myModal").html(showModal(id))
         $("#email").val(select.email.receiver.email)
         $("#subject").val(select.email.header)
-        $("#compose").val(select.email.text)
+        $("#compose-email").val(select.email.text)
         modal.style.display = "block"
     }
 }
@@ -285,7 +287,7 @@ function makeid(length) {
 }
 
 function showSelector(id) {
-    return '<div class="profile-pic selected-icon" id="selected-icon-' + id + '" onclick="deSelected(' + id +')">\
+    return '<div class="profile-pic selected-icon" id="selected-icon-' + id + '" onclick="deSelected(\'' + id + '\')">\
                 <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check icon-width" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
                     <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>\
                 </svg>\
@@ -293,7 +295,7 @@ function showSelector(id) {
 }
 
 function showProfilePic(id) {
-    return '<img class="profile-pic" id="pic-' + id +'" onclick="selected(' + id + ')" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">'
+    return '<img class="profile-pic" id="pic-' + id +'" onclick="selected(\'' + id + '\')" src="https://scontent.fbkk22-6.fna.fbcdn.net/v/t1.0-9/1525646_265856100228767_1613687809_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_eui2=AeEmSbGT42jvvQxwNn6bmKDgf2d6VZnrfFV_Z3pVmet8VcUfaCjPA9tVGZB0ERvMLCvNUVLrQYcKtScx5wf1_wm9&_nc_ohc=I1fr_DRy28cAX9DeIu9&_nc_ht=scontent.fbkk22-6.fna&oh=4d57aba63b23885dbfc2c08f5ccfc0ea&oe=5F629809">'
 }
 
 function showTool(color='', position='', action=''){
@@ -336,27 +338,40 @@ function showTool(color='', position='', action=''){
             </div>'
 }
 
-function sendEmail(email, subject, text) {
-    var mail = {
-        receiver: {
-            name: email.split("@")[0],
-            email: email
-        },
-        id: makeid(10),
-        header: subject,
-        text: text,
-        createdAt: new Date(),
-        type:"sent",
-        isDeleted: false
-    }
-
-    allEmail.push(mail)
-}
-
-function draftEmail(email="", subject="", text="", id='') {
+function sendEmail(email, subject, text, id) {
     var isExist = allEmail.some(function(mail) {
         if (id == mail.id) {
-            console.log('eieieieieieieiei')
+            mail.receiver.email = email,
+            mail.receiver.name = email.split("@")[0],
+            mail.header = subject,
+            mail.text =  text,
+            mail.createdAt = new Date(),
+            mail.type = "sent",
+            mail.isDeleted = false
+            return true
+        }
+    })
+
+    if (!isExist) {
+        var mail = {
+            receiver: {
+                name: email.split("@")[0],
+                email: email
+            },
+            id: makeid(10),
+            header: subject,
+            text: text,
+            createdAt: new Date(),
+            type:"sent",
+            isDeleted: false
+        }
+        allEmail.push(mail)
+    }
+}
+
+function draftEmail(email="", subject="", text="", id="") {
+    var isExist = allEmail.some(function(mail) {
+        if (id == mail.id) {
             mail.receiver.email = email,
             mail.header = subject,
             mail.text = text,
@@ -379,16 +394,7 @@ function draftEmail(email="", subject="", text="", id='') {
             isDeleted: false
         }
         allEmail.push(draftMail)
-        console.log('allMail: ', allMail)
     }
-}
-
-function deleteMail(id) {
-    allEmail.forEach(function(mail) {
-        if(mail.id === id) {
-            mail.isDeleted = true
-        }
-    })
 }
 
 function render(page, selector) {
@@ -398,7 +404,6 @@ function render(page, selector) {
     }
     $(".body").html(page)
     $(".inbox-mail").html(selector)
-    console.log(currentPage)
 }
 
 function findEmail(list, id) {
@@ -449,19 +454,23 @@ function deselectAll() {
 }
 
 function deleteEmail() {
-    allEmail.forEach(function(mail) {
+    allEmail.forEach(function(mail, index) {
         selectedList.forEach(function(select) {
             if (select.id == mail.id) {
-                mail.isDeleted = true
+                if (!mail.isDeleted) {
+                    mail.isDeleted = true
+                } else {
+                    // var selected= findEmail(allEmail, id)
+                    var pop = allEmail.splice(index, 1)
+                    console.log(pop)
+                }
             }
         })
     })
 
     selectedList = []
-
-    render(mainPage(), inbox())
     $(".header").html(header())
-
+    refresh()
 }
 
 function openMenuList() {
@@ -489,18 +498,65 @@ function goBackward() {
     }
 }
 
-function closeModal(id) {
+function closeModal(id='') {
+    var email = $("#email").val()
+    var subject = $("#subject").val()
+    var text = $("#compose-email").val()
+    
+    if (email === '' && subject === '' && text === '' ){
+        if (id !== ''){
+            var select= findEmail(allEmail, id)
+            var pop = allEmail.splice(select.emailId, 1)               
+        }
+
+        currentPage = previousPage
+        refresh()
+        modal.style.display = "none";
+
+    } else {
+        draftEmail(email, subject, text, id)
+
+        $("#email").val('')
+        $("#subject").val('')
+        $("#compose-email").val('')
+
+        render(draftsMailPage(), draftsMail())
+        modal.style.display = "none";
+
+    }
+}
+
+function sendMail(id='') {
     var email = $("#email").val()
     var subject = $("#subject").val()
     var text = $("#compose-email").val()
 
-    draftEmail(email, subject, text, 5)
-    render(draftsMailPage(), draftsMail())
-    modal.style.display = "none";
+    if (email === '' || subject === '' || text === '' ) {
+        console.log('mail not complete!')
+    } else {
+        sendEmail(email, subject, text, id)
 
-    $("#email").val('')
-    $("#subject").val('')
-    $("#compose-email").val('')
+        modal.style.display = "none";
+        render(sentMailPage(), sentMail())
+
+        $("#email").val('')
+        $("#subject").val('')
+        $("#compose-email").val('')
+    }
+}
+
+function refresh() {
+    if (currentPage === 'inbox') {
+        render(mainPage(), inbox())
+    } else if (currentPage === 'sent') {
+        render(sentMailPage(), sentMail())
+    } else if (currentPage === 'drafts') {
+        render(draftsMailPage(), draftsMail())
+    } else if (currentPage === 'all-mail') {
+        render(allMailPage(), allMail())
+    } else if (currentPage === 'deleted') {
+        render(deletedMailPage(), deletedMail())
+    }
 }
 
 start()
@@ -529,38 +585,9 @@ $("#deleted-mail-btn").click(function() {
 $("#myBtn").click(function() {
     previousPage = currentPage
     modal.style.display = "block";
-    $("#myModal").html(showModal())
+    $("#myModal").html(showModal(''))
     currentPage = 'edit-draft'
 })
-
-$("#send-btn").click(function() {
-    var email = $("#email").val()
-    var subject = $("#subject").val()
-    var text = $("#compose-email").val()
-
-    sendEmail(email, subject, text)
-
-    modal.style.display = "none";
-    render(sentMailPage(), sentMail())
-
-    $("#email").val('')
-    $("#subject").val('')
-    $("#compose-email").val('')
-})
-
-// $(".close").click(function() {
-//     var email = $("#email").val()
-//     var subject = $("#subject").val()
-//     var text = $("#compose-email").val()
-
-//     draftEmail(email, subject, text, id)
-//     render(draftsMailPage(), draftsMail())
-//     modal.style.display = "none";
-
-//     $("#email").val('')
-//     $("#subject").val('')
-//     $("#compose-email").val('')
-// })
 
 window.onclick = function(event) {
   if (event.target == modal) {
