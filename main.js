@@ -382,6 +382,13 @@ function mainPage() {
             <div class="inbox-mail"></div>'
 }
 
+function allInboxPage() {
+    previousPage = currentPage
+    currentPage = 'all-inbox'
+    return '<div class="page-name">ALL INBOX</div>\
+            <div class="inbox-mail"></div>'
+}
+
 function mailContentPage() {
     previousPage = currentPage
     currentPage = 'mail-content'
@@ -712,6 +719,10 @@ var modal = $("#myModal")[0];
 
 $("#inbox-mail-btn").click(function() {
     render(mainPage(), inbox())
+})
+
+$("#all-inbox-mail-btn").click(function() {
+    render(allInboxPage(), inbox())
 })
 
 $("#sent-mail-btn").click(function() {
