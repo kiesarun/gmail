@@ -1,0 +1,385 @@
+.body-container
+    display flex
+    flex-direction column
+    width 100%
+
+.header
+    height 100px
+    width 100%
+
+.main-header
+    padding 20px
+    height 100%
+    width 100%
+
+.tool-bar
+    width 100%
+    height 100%
+    padding 20px 0px
+
+.color-grey
+    color grey !important
+
+.tool-box
+    width 100%
+    height 100%
+    display flex
+    vertical-align middle
+    justify-content space-between
+    box-shadow 0px 4px 10px lightgray
+
+.tool-box-left
+    align-self center
+    margin-left 10px
+    color #1a73e8
+    display flex
+
+.selected-count
+    margin-left 40px
+    font-weight 600
+
+.tool-box-right
+    align-self center
+    margin-right 10px
+    color #1a73e8
+    display flex
+
+.space-between
+    margin 0px 10px
+
+.header-bar
+    height 100%
+    nav
+        box-shadow 0px 4px 10px lightgray
+        background-color #fff !important
+
+.search-bar-style
+    height 100%
+    border-radius 6px
+
+.form-inline
+    width 100%
+    height 100%
+    flex-flow unset !important
+    align-items stretch
+    .search-bar
+        .form-control
+            width 100%
+            border 1px solid #fff
+            padding 0px 0px 5px 12px
+            height 100%
+
+.menu-list-icon
+    width 10%
+    height 100%
+    text-align center
+    vertical-align middle
+
+.search-bar
+    width 80%
+    height 100%
+
+.profile-icon
+    text-align center
+    height 100%
+
+.profile-pic
+    height 80%
+    border-radius 50%
+
+.selected-icon
+    min-width 56px
+    background-color #1a73e8
+    color #fff
+
+.icon-width
+    min-width 56px
+    padding-top 5px
+
+.body
+    padding 0px 20px 0px 20px
+
+.page-name
+    margin-bottom 20px
+    font-size 12px
+    font-weight 600
+    color gray
+
+.mail-title-box
+    margin 20px 0px
+    display flex
+    text-align center
+    height 70px
+
+.mail-sender-profile
+    max-width 15%
+    height 100%
+    text-align left
+
+.sender-profile-icon
+    width 100%
+    height 100%
+    margin-bottom auto
+    margin-top auto
+
+.header-text-title
+    width 85%
+    display flex
+    flex-direction column
+    height 100%
+    padding-left 10px
+
+.mail-sent-info
+    font-weight 700
+    text-align left
+    display flex
+    height 40%
+
+.sender-name
+    width 80%
+
+.sent-time
+    width 20%
+    font-size 12px
+    display flex
+    align-items flex-end
+    .date-time
+        width 100%
+        text-align right
+
+.content-box
+    display flex
+    height 60%
+
+.mail-content
+    display flex
+    width 85%
+    height 100%
+    flex-direction column
+
+.mail-header-text
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+    font-weight 700
+    font-size 14px
+    text-align left
+    height 50%
+
+.mail-content-text
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+    text-align left
+    height 50%
+
+.fav-icon
+    width 15%
+    display flex
+    text-align center
+    align-items flex-end
+    justify-content flex-end
+    .icon
+        color grey
+        text-align center
+        :hover
+            color #1a73e8
+            text-align center
+
+.margin-right
+    margin-right 10px
+
+.compose
+    position fixed
+    bottom 20px
+    right 20px
+    button
+        border-radius 50px
+        border-color #fff
+        background-color #fff
+        box-shadow 2px 5px 10px grey !important
+        font-weight 600
+        padding 10px 15px
+
+.pencil-style
+    font-weight 700
+    margin-right 5px
+
+.mail-header-wrapper
+    display flex
+    .fav-icon
+        justify-content flex-end
+        width 10%
+
+.mail-content-subject
+    font-size 24px
+    width 90%
+    word-break break-all
+
+.mail-content-sender
+    .mail-title-box
+        margin-bottom 0px
+        .header-text-title
+            .mail-sent-info
+                .sender-name
+                    width fit-content
+                    font-weight 500
+                .sent-time
+                    align-items center
+                    color gray
+                    font-weight 400
+                    text-align center
+                    width fit-content
+                    margin-left 10px
+
+.receiver-box
+    width fit-content
+    font-size 12px
+    color gray
+
+.mail-content-compose
+    word-break break-all
+
+#wrapper
+    overflow-x hidden
+    &.toggled
+        #sidebar-wrapper
+            margin-left 0
+
+#sidebar-wrapper
+    min-height 100vh
+    margin-left -15rem
+    -webkit-transition margin .25s ease-out
+    -moz-transition margin .25s ease-out
+    -o-transition margin .25s ease-out
+    transition margin .25s ease-out
+    background-color #fff !important
+    border none !important
+    box-shadow 0px 1px 6px lightgray !important
+    .sidebar-heading
+        padding 0.875rem 1.25rem
+        font-size 1.2rem
+        margin-bottom 7px
+        box-shadow 0px 1px 6px lightgray !important
+    .list-group
+        width 15rem
+
+.bg-light
+    a
+        background-color #fff !important
+        border none
+
+#page-content-wrapper
+    min-width 100vw
+
+.modal
+    display none
+    position fixed
+    z-index 1
+    left 0
+    top 0
+    width 100%
+    height 100%
+    overflow auto
+    background-color rgb(0,0,0)
+    background-color rgba(0,0,0,0.4)
+    -webkit-animation-name fadeIn
+    -webkit-animation-duration 0.4s
+    animation-name fadeIn
+    animation-duration 0.4s
+
+.modal-content
+    position fixed
+    height 100%
+    bottom 0
+    background-color #fefefe
+    width 100%
+    -webkit-animation-name slideIn
+    -webkit-animation-duration 0.4s
+    animation-name slideIn
+    animation-duration 0.4s
+
+.close
+    color white
+    float right
+    font-size 28px
+    font-weight bold
+
+.close:hover,
+.close:focus
+    color #000
+    text-decoration none
+    cursor pointer
+
+.modal-header
+    padding 2px 16px
+    border-bottom 1px solid #fff !important
+    .close
+        padding 0px !important
+        margin 0px !important
+
+.tool
+    width 30%
+    display flex
+    justify-content space-between
+
+.tool-icon
+    height 100%
+    align-items flex-end
+
+.modal-body
+    padding 0px !important
+    form
+        width 100%
+    .form-group
+        margin 0px
+    .form-control
+        border-radius 0px
+        border none
+        border-bottom 1px solid #ced4da
+
+.form-group
+    input
+        height 45px
+    textarea
+        height 100vh !important
+
+.modal-footer
+    padding 2px 16px
+    background-color #5cb85c
+    color white
+
+@-webkit-keyframes
+    slideIn
+        from bottom -300px
+        opacity 0
+
+to
+    bottom 0
+    opacity 1
+    bottom 0
+    opacity 1
+    opacity 1
+    opacity 1
+
+    @keyframes
+        slideIn
+            from bottom -300px
+            opacity 0
+        fadeIn
+            from opacity 0
+    @-webkit-keyframes
+        fadeIn
+            from opacity 0
+    @media (min-width: 768px)
+        #sidebar-wrapper
+            margin-left 0
+
+@media (min-width: 768px)
+    #page-content-wrapper
+        min-width 0
+        width 100%
+    #wrapper
+        &.toggled
+            #sidebar-wrapper
+                margin-left -15rem
