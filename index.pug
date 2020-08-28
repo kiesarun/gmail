@@ -741,6 +741,8 @@ script.
             render(allMailPage(), allMail())
         } else if(previousPage === 'deleted') {
             render(deletedMailPage(), deletedMail())
+        } else if(previousPage === 'all-inbox') {
+            render(allInboxPage(), inbox())
         }
     }
 
@@ -802,6 +804,8 @@ script.
             render(allMailPage(), allMail())
         } else if (currentPage === 'deleted') {
             render(deletedMailPage(), deletedMail())
+        } else if (currentPage === 'all-inbox') {
+            render(allInboxPage(), inbox())
         }
     }
 
