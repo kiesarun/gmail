@@ -43,6 +43,9 @@
   display: flex;
   justify-content: space-between;
 }
+.tool a {
+  color: #808080;
+}
 .tool-icon {
   height: 100%;
   align-items: flex-end;
