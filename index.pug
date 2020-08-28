@@ -1,6 +1,7 @@
 doctype html
 head
   link(rel='stylesheet' href='style.css')
+
   // Required meta tags
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
@@ -78,9 +79,9 @@ head
   #page-content-wrapper
     .header
     .body
-    #myBtn.compose
+    a.compose(href='create-page.pug')
       img(src='slack-imgs.png')
-#myModal.modal
+    #myModal.modal
 // Optional JavaScript
 // jQuery first, then Popper.js, then Bootstrap JS
 //- script(src='data.js')
@@ -544,41 +545,15 @@ script.
     }
 
     function showTool(color='', position='', action=''){
-        return '<div class="tool-bar '+ position + '" >\
-                    <div class="tool-box">\
-                        <div class="tool-box-left ' + color + '">\
-                            <div id="go-back-icon" onclick="' + action + '">\
-                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
-                                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>\
-                                </svg>\
-                            </div>\
-                            <div class="selected-count"></div>\
-                        </div>\
-                        <div class="tool-box-right ' + color + '">\
-                            <div class="space-between" id="archived-icon">\
-                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-download" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
-                                    <path fill-rule="evenodd" d="M.5 8a.5.5 0 0 1 .5.5V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8.5a.5.5 0 0 1 1 0V12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8.5A.5.5 0 0 1 .5 8z"/>\
-                                    <path fill-rule="evenodd" d="M5 7.5a.5.5 0 0 1 .707 0L8 9.793 10.293 7.5a.5.5 0 1 1 .707.707l-2.646 2.647a.5.5 0 0 1-.708 0L5 8.207A.5.5 0 0 1 5 7.5z"/>\
-                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 1z"/>\
-                                </svg>\
-                            </div>\
-                            <div class="space-between" id="delete-icon" onclick=deleteEmail()>\
-                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>\
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>\
-                                </svg>\
-                            </div>\
-                            <div class="space-between" id="envelope-icon">\
-                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
-                                    <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>\
-                                </svg>\
-                            </div>\
-                            <div class="space-between" id="three-dots-icon">\
-                                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\
-                                    <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>\
-                                </svg>\
-                            </div>\
-                        </div>\
+        return '<div class="create-page-header">\
+                    <a class="close" href="index.pug">\
+                        <div class="material-icons">arrow_back</div>\
+                        <div class="page-name">Compose</div>\
+                    </a>\
+                    <div class="tool">\
+                        <div class="material-icons tool-icon">insert_link</div>\
+                        <div class="material-icons tool-icon">send</div>\
+                        <div class="material-icons tool-icon">more_horiz</div>\
                     </div>\
                 </div>'
     }
