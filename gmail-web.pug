@@ -1,0 +1,63 @@
+doctype html
+head
+  link(rel='stylesheet' href='web-style.css')
+
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+  title gmail
+.body-page
+    .page-header
+        .home-menu
+            .menu-icon
+                .material-icons menu
+            .mail-pic 
+                img(src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png")
+        .search-bar
+                .search-icon
+                    .material-icons search
+                input.form-control(type='search' placeholder='Search in mail' aria-label='Search')
+                .search-icon
+                    .material-icons arrow_drop_down
+        .tool-menu
+            a.tool-icon
+                .material-icons help_outline
+            a.tool-icon
+                .material-icons settings 
+            a.tool-icon
+                .material-icons apps
+            .profile-box
+                .profile-pic
+                    img(src="https://www.google.com/a/cpanel/angstromsolutions.net/images/logo.gif?service=google_gsuite")
+                .profile-icon
+                    .circle-icon
+                        .text S
+
+    .page-body
+        .menu-bar
+            .compose-btn
+                img(src="slack-imgs.png")
+                .compose-text compose
+            #wrapper.d-flex
+                #sidebar-wrapper.bg-light
+                    .list-group.list-group-flush
+                        a#all-inbox-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .material-icons.margin-right  all_inbox 
+                            |                         All Inboxes
+                        a#primary-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .material-icons.margin-right  inbox 
+                            |                         Primary
+                        a#social-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .material-icons.margin-right  people 
+                            |                         Social
+                        a#promotion-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .material-icons.margin-right  local_offer 
+                            |                         Promations
+        .page-content page content
+
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
