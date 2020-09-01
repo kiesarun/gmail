@@ -715,7 +715,7 @@ function refresh() {
 }
 
 start()
-var modal = $("#myModal")[0];
+var modal = $("#myModal");
 
 $("#inbox-mail-btn").click(function() {
     render(mainPage(), inbox())

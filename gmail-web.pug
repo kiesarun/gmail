@@ -1,0 +1,163 @@
+doctype html
+head
+  link(rel='stylesheet' href='web-style.css')
+
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+  title gmail
+.body-page
+    .page-header
+        .home-menu
+            .menu-list-icon
+                .material-icons menu
+            .mail-pic 
+                img(src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x.png")
+        .search-bar
+                .search-icon
+                    .material-icons search
+                input.form-control(type='search' placeholder='Search in mail' aria-label='Search')
+                .search-icon
+                    .material-icons arrow_drop_down
+        .tool-menu
+            a.tool-icon
+                .material-icons help_outline
+            a.tool-icon
+                .material-icons settings 
+            a.tool-icon
+                .material-icons apps
+            .profile-box
+                .profile-pic
+                    img(src="https://www.google.com/a/cpanel/angstromsolutions.net/images/logo.gif?service=google_gsuite")
+                .profile-icon
+                    .circle-icon
+                        .text S
+
+    .page-body
+        .menu-bar
+            .compose-btn
+                .logo-img
+                    img(src="slack-imgs.png")
+                .compose-text Compose
+            #wrapper.d-flex
+                #sidebar-wrapper.bg-light
+                    .list-group.list-group-flush.mail-menu
+                        a#inbox-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons inbox
+                            .menu-name Inbox
+                        a#star-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons  star
+                            .menu-name Starred
+                        a#snooze-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons watch_later  
+                            .menu-name Snoozed
+                        a#sent-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons  send
+                            .menu-name Sent
+                        a#drafts-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons insert_drive_file 
+                            .menu-name Drafts
+                        //- a#more-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                        //-     .menu-icon
+                        //-         .material-icons  keyboard_arrow_down
+                        //-     .menu-name More
+                        a#important-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons label_important 
+                            .menu-name Important
+                        a#important-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons contact_support
+                            .menu-name Chats
+                        a#schedule-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons cancel_schedule_send 
+                            .menu-name Scheduled
+                        a#all-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons  mail
+                            .memu-name All mail
+                        a#spam-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons  report 
+                            .menu-name Spam
+                        a#deleted-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons  delete
+                            .menu-name Trash
+                        a#categories-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons label
+                            .menu-name Categories
+                        a#setting-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons  settings 
+                            .menu-name Manage labels
+                        a#setting-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons  add
+                            .menu-name Create new label
+            .box-shadow
+            .meet
+                .meet-text Meet
+                #sidebar-wrapper.bg-light
+                    .list-group.list-group-flush
+                        a#inbox-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons videocam
+                            .menu-name New meeting
+                        a#inbox-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .menu-icon
+                                .material-icons calendar_today
+                            .menu-name My meeting
+            .box-shadow
+            .meet
+                .meet-text Hangouts
+                #sidebar-wrapper.bg-light
+                    .list-group.list-group-flush
+                        a#inbox-mail-btn.list-group-item.list-group-item-action.bg-light(href='#')
+                            .hangout-icon
+                                img(src="https://lh3.googleusercontent.com/a/default-user=s28-c-k-no")
+                            .hangout-name Sarunya
+                            .material-icons arrow_drop_down
+                        
+        .page-content-all
+            .page-content
+                .content-header
+                    .content-header-left
+                        .header-icon
+                            .material-icons check_box_outline_blank
+                            .material-icons arrow_drop_down
+                        .header-icon
+                            .material-icons refresh
+                        .header-icon
+                            .material-icons more_vert
+                    .content-header-right
+                        .header-icon
+                            .page-number-box 1-45 of 45
+                        .header-icon
+                            .material-icons chevron_left
+                        .header-icon
+                            .material-icons chevron_right
+                .mail-content
+                    .checkbox-icon
+                        .header-icon
+                            .material-icons check_box_outline_blank
+                        .content-icon 
+                            .material-icons star_outline
+                        .mail-sender Sender
+                    .mail-info
+                        .mail-subject subject of email is 700 font weight
+            .sidebar
+
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')

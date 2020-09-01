@@ -191,20 +191,16 @@
   text-align: center;
 }
 .margin-right {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .compose {
   position: fixed;
   bottom: 20px;
   right: 20px;
-}
-.compose button {
-  border-radius: 50px;
-  border-color: #fff;
   background-color: #fff;
-  box-shadow: 2px 5px 10px #808080 !important;
-  font-weight: 600;
-  padding: 10px 15px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 4px 8px 10px #d3d3d3;
 }
 .pencil-style {
   font-weight: 700;
@@ -252,7 +248,6 @@
   margin-left: 0;
 }
 #sidebar-wrapper {
-  min-height: 100vh;
   margin-left: -15rem;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
@@ -263,20 +258,32 @@
   box-shadow: 0px 1px 6px #d3d3d3 !important;
 }
 #sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
+  height: 80px;
+  padding: 25px 20px;
   font-size: 1.2rem;
   margin-bottom: 7px;
-  box-shadow: 0px 1px 6px #d3d3d3 !important;
+  color: #c3544d;
+  border-bottom: 1px solid #eaebeb;
 }
 #sidebar-wrapper .list-group {
   width: 15rem;
 }
+.overflow-scroll {
+  height: 100vh;
+  overflow: scroll;
+}
 .bg-light a {
   background-color: #fff !important;
   border: none;
+  display: flex;
 }
 #page-content-wrapper {
   min-width: 100vw;
+}
+#all-inbox-mail-btn {
+  border-bottom: 1px solid #eaebeb;
+  margin-bottom: 2px;
+  padding: 20px;
 }
 .modal {
   display: none;
@@ -358,6 +365,12 @@
   padding: 2px 16px;
   background-color: #5cb85c;
   color: #fff;
+}
+.menu-header-labels {
+  margin: 15px 20px 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #495057;
 }
 @-webkit-keyframes  {
   slideIn {
