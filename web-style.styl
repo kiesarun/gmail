@@ -5,6 +5,7 @@
     height 64px
     padding 8px
     display flex
+    border-bottom 1px solid #eaebeb
 
 .home-menu
     padding-right 30px
@@ -14,7 +15,7 @@
     justify-content flex-start
     vertical-align middle
 
-.menu-icon 
+.menu-list-icon 
     padding 12px
     width 48px
     margin 0px 4px
@@ -53,7 +54,7 @@
     color #5f6368
     width calc((100% - 256px) / 2)
     display flex
-    justify-content space-between
+    justify-content flex-end
     vertical-align middle
     a 
         width 40px
@@ -76,6 +77,7 @@
     cursor pointer
     justify-content space-between
     margin-right 4px
+    margin-left 10px
 
 .profile-pic
     max-height 32px
@@ -104,10 +106,11 @@
 
 .page-body
     display flex
-    padding 8px
+    padding 0px 8px 8px 0px
 
 .menu-bar
     width 256px
+    padding-top 16px
 
 .compose-bar
     height 48px
@@ -116,18 +119,27 @@
     background-color yellow
 
 .compose-btn
-    padding 8px
     display flex
     padding-right 24px
     width fit-content
+    height 48px
+    margin-left 8px
     border-radius 30px
-    text-align center
+    cursor pointer
     box-shadow 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149)
-    img 
-        margin-right 10px
+    .logo-img
+        height 100%
+        width 56px
+        display flex
+        align-item center
+        text-align center
+        justify-content center
+        img 
+            align-self center
     .compose-text
-        margin 0px
         font-weight 600
+        font-size 14px
+        align-self center
         color #3C4043
 
 #wrapper
@@ -136,6 +148,9 @@
     &.toggled
         #sidebar-wrapper
             margin-left 0
+
+#wrapper::-webkit-scrollbar
+  display none
 
 #sidebar-wrapper
     background-color #fff !important
@@ -151,19 +166,137 @@
         width 15rem
         a
             display flex
+            background-color #fff !important
+            border none
+            display flex
+            color #5f6368
+            font-size 14px
+        .list-group-item
+            padding 6px 12px 6px 26px
+            height 32px
+.menu-icon
+    width 20px
+    height 20px 
+    margin-right 18px
+    .material-icons
+        font-size 20px
+
+.menu-name
+    height 20px
+    width 164px
+    font-weight 400
 
 .overflow-scroll
     height 100vh
     overflow scroll
 
-.bg-light
-    a
-        background-color #fff !important
-        border none
-        display flex
+.mail-menu
+    height 109px
+    border-bottom 1px solid #eaebeb
 
-.margin-right
-    margin-right 15px
+.box-shadow
+    height 5px
+
+.meet
+    box-shadow: 0 -2px 2px -1px rgba(0,0,0,.1);
+
+.meet-text
+    margin 0px 12px 0px 26px
+    font-size 14px
+    height 32px
+    color: #202124
+    font-weight 500
+    display flex 
+    align-items center
+
+.hangout-icon
+    margin-right 5px
+    img 
+        border-radius 50%
+
+.hangout-name
+    height 28px
+
+.page-content-all
+    width calc(100% - 256px)
+    display flex
 
 .page-content
-    width calc(100% - 256px)
+    width calc(100% - 48px)
+    border-right 1px solid #eaebeb
+
+.side-bar
+    background-color pink 
+    height 100px
+    width 48px
+
+.content-header
+    height 48px
+    border-bottom 1px solid #eaebeb
+    display flex 
+    justify-content space-between
+
+.content-header-left 
+    height 100%
+    display flex
+
+.header-icon 
+    display flex 
+    justify-content center 
+    height 100%
+    padding 10px
+    .material-icons
+        align-self center
+        cursor pointer
+        color #5f6368
+
+.content-header-right 
+    height 100%
+    display flex
+    justify-content center 
+    color #5f6368
+
+.page-number-box
+    background-color light-grey !important
+    font-size 12px
+    align-self center
+
+.mail-content
+    width 100%
+    height 40px
+    display flex
+    justify-content space-between
+
+.checkbox-icon
+    display flex
+    .header-icon 
+        .material-icons
+            color #EBECF0
+
+.mail-sender
+    font-size  14px
+    align-self center
+    width 200px
+    padding-right 32px
+
+.content-icon 
+    display flex 
+    justify-content center 
+    height 100%
+    padding-right 10px
+    .material-icons
+        align-self center
+        cursor pointer
+        color #EBECF0
+
+.mail-info
+    width 100%
+    display flex
+
+
+.mail-subject
+    height 100%
+    font-size 14px
+    font-weight 700
+    align-self center
+
